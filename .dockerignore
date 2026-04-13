@@ -1,0 +1,26 @@
+# Artefactos de compilación
+target/
+
+# Control de versiones
+.git/
+.gitignore
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.classpath
+*.project
+*.settings/
+
+# Docker (evitar recursión)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Miscelánea
+*.md
+*.pdf
+*.txt
+.claude/
+.tool-versions
