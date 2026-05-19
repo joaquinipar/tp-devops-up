@@ -27,9 +27,12 @@ WORKDIR /app
 # Copiamos únicamente el jar generado en la etapa anterior
 COPY --from=builder /app/target/*.jar app.jar
 
+# Descargamos el agente APM de Datadog
+RUN wget -q -O dd-java-agent.jar https://dtdg.co/latest-java-tracer
+
 # El proceso corre con el usuario sin privilegios
 USER appuser
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-javaagent:/app/dd-java-agent.jar", "-jar", "app.jar"]
