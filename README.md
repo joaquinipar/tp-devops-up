@@ -17,6 +17,7 @@ API REST de gestión de alumnos desarrollada con Java 17 y Spring Boot 3, docker
 | GET | `/api/alumnos` | Lista todos los alumnos |
 | GET | `/api/alumnos/{id}` | Obtiene un alumno por ID |
 | POST | `/api/alumnos` | Crea un nuevo alumno |
+| PUT | `/api/alumnos/{id}` | Actualiza un alumno existente |
 | DELETE | `/api/alumnos/{id}` | Elimina un alumno |
 
 **Base URL producción:** `https://gestion-alumnos-latest.onrender.com`
@@ -51,6 +52,7 @@ mvn test
 ./scripts/get-alumnos.sh            # GET todos los alumnos
 ./scripts/create-alumno.sh          # POST crear alumno
 ./scripts/get-alumno-by-id.sh 1     # GET por ID
+./scripts/update-alumno.sh 1        # PUT actualizar alumno
 ./scripts/delete-alumno.sh 1        # DELETE por ID
 ```
 
@@ -58,6 +60,16 @@ Para apuntar a local:
 ```bash
 API_URL=http://localhost:8080 ./scripts/get-alumnos.sh
 ```
+
+## Configuración del entorno de desarrollo
+
+Al clonar el repositorio, activar el hook de validación de commits:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Esto rechaza cualquier commit cuyo mensaje no siga el formato de [Conventional Commits](https://www.conventionalcommits.org/), como `feat:`, `fix:`, `chore:`, etc.
 
 ## Pipeline CI/CD
 
