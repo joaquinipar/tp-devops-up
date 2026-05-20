@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.0](https://github.com/joaquinipar/tp-devops-up/compare/v1.0.0...v1.1.0) (2026-05-20)
+
+
+### Features
+
+* add PUT endpoint to update alumno by id ([b6ba111](https://github.com/joaquinipar/tp-devops-up/commit/b6ba11172e549a075c0dc03bab0d9dcab8684d01))
+
+
+### Bug Fixes
+
+* change release-please type from java to simple ([8498b62](https://github.com/joaquinipar/tp-devops-up/commit/8498b62f227d2e997f0aa4c70aee817c04aa78c1))
+* configure squash merge for release-please compatibility ([#6](https://github.com/joaquinipar/tp-devops-up/issues/6)) ([2ec177f](https://github.com/joaquinipar/tp-devops-up/commit/2ec177f6ac165499bf58c32b820d74f903e83e20))
+* update healthcheck endpoint response ([d8daa6b](https://github.com/joaquinipar/tp-devops-up/commit/d8daa6b97860d741062a66bcd6ff4d98a05db0a7))
+* update healthcheck endpoint response ([1ca9b25](https://github.com/joaquinipar/tp-devops-up/commit/1ca9b25d8f09dc0a91329f6d32798187f436d954))
+
 ## 1.0.0 (2026-05-20)
 
 
