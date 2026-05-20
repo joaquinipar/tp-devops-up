@@ -30,6 +30,15 @@ public class AlumnoService {
         return alumnoRepository.save(alumno);
     }
 
+    public Alumno update(Long id, Alumno datos) {
+        Alumno existente = findById(id);
+        existente.setNombre(datos.getNombre());
+        existente.setApellido(datos.getApellido());
+        existente.setEmail(datos.getEmail());
+        existente.setMatricula(datos.getMatricula());
+        return alumnoRepository.save(existente);
+    }
+
     public void deleteById(Long id) {
         if (!alumnoRepository.existsById(id)) {
             throw new AlumnoNotFoundException(id);
