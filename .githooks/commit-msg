@@ -1,0 +1,26 @@
+#!/bin/sh
+commit_msg=$(cat "$1")
+
+# Skip merge commits
+case "$commit_msg" in
+  Merge*) exit 0 ;;
+esac
+
+pattern='^(feat|fix|docs|style|refactor|test|chore|ci|perf|build|revert)(\(.+\))?(!)?: .+'
+
+if ! echo "$commit_msg" | grep -qE "$pattern"; then
+  echo ""
+  echo "ERROR: commit message does not follow Conventional Commits format."
+  echo ""
+  echo "  Expected: <type>[optional scope]: <description>"
+  echo "  Example:  feat: add login endpoint"
+  echo "            fix(auth): handle null token"
+  echo ""
+  echo "  Valid types: feat, fix, docs, style, refactor, test, chore, ci, perf, build, revert"
+  echo ""
+  echo "  Your message: $commit_msg"
+  echo ""
+  exit 1
+fi
+
+exit 0

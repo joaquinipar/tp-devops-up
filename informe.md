@@ -15,11 +15,11 @@ El trabajo se dividió en cinco fases que fui completando de forma incremental, 
 
 Lo primero fue definir la tecnología: Java 17 con Spring Boot 3, Maven como sistema de build y PostgreSQL como base de datos. Utilicé Spring Data JPA para el acceso a datos, lo que me permitió tener un CRUD completo sin escribir SQL manual.
 
-La entidad central es `Alumno`, con campos básicos como nombre, apellido, email y matrícula. Sobre eso construí un repositorio, un servicio con la lógica de negocio y un controlador REST expuesto en `/api/alumnos` que responde a las operaciones GET, POST y DELETE.
+La entidad central es `Alumno`, con campos básicos como nombre, apellido, email y matrícula. Sobre eso construí un repositorio, un servicio con la lógica de negocio y un controlador REST expuesto en `/api/alumnos` que responde a las operaciones GET, POST, PUT y DELETE.
 
 Un punto importante de esta fase fue el testing. Escribí pruebas unitarias para el servicio usando JUnit 5 y Mockito, sin levantar el contexto de Spring ni conectarse a ninguna base de datos. Esto da tests rápidos y aislados que el pipeline puede ejecutar en segundos. Cubrí los cuatro métodos del servicio con seis casos de prueba, incluyendo tanto los caminos exitosos como los de error.
 
-Desde el primer commit utilicé la convención de Conventional Commits (`feat:`, `fix:`, `chore:`, `ci:`, `test:`), una decisión que después resultó clave para la generación automática de releases.
+Desde el primer commit utilicé la convención de Conventional Commits (`feat:`, `fix:`, `chore:`, `ci:`, `test:`), una decisión que después resultó clave para la generación automática de releases. Para reforzar esta práctica a nivel local, agregué un hook de Git del tipo `commit-msg` en el directorio `.githooks/`. El hook valida mediante una expresión regular que cada mensaje de commit siga el formato exigido antes de permitir la operación. Si el mensaje no es válido, el commit se rechaza con un mensaje de error que muestra el formato esperado. El hook se activa configurando Git para que use ese directorio: `git config core.hooksPath .githooks`.
 
 ---
 
