@@ -27,6 +27,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      JAVA_TOOL_OPTIONS: "-javaagent:/app/dd-java-agent.jar"
       DD_AGENT_HOST: datadog
       DD_SERVICE: gestion-alumnos
       DD_ENV: dev
