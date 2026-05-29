@@ -102,4 +102,4 @@ build-and-test → docker-publish → render-deploy
 
 ## Autor
 
-Joaquin Ipar — Universidad de Palermo, 2026
+Joaquin Ipar — Universidad de Palermo, 2026.
