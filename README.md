@@ -1,4 +1,4 @@
-# Gestión de Alumnos API
+# Gestión de Alumnos API - 2026
 
 API REST de gestión de alumnos desarrollada con Java 17 y Spring Boot 3, dockerizada y desplegada con un pipeline CI/CD completo. Proyecto final para la materia DevOps — Universidad de Palermo.
 
