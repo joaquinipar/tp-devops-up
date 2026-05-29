@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/joaquinipar/tp-devops-up/compare/v1.1.0...v1.1.1) (2026-05-29)
+
+
+### Bug Fixes
+
+* fix typo ([31069f8](https://github.com/joaquinipar/tp-devops-up/commit/31069f88f61aa35d70d5f5cf1c972b7d269b9e84))
+
 ## [1.1.0](https://github.com/joaquinipar/tp-devops-up/compare/v1.0.0...v1.1.0) (2026-05-20)
 
 
