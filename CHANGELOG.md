@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.2](https://github.com/joaquinipar/tp-devops-up/compare/v1.1.1...v1.1.2) (2026-07-17)
+
+
+### Bug Fixes
+
+* deploy Render con imagen versionada en vez de latest ([5cfa336](https://github.com/joaquinipar/tp-devops-up/commit/5cfa3360d32fc252632e17e9696957da3c4447b9))
+* deploy Render con imagen versionada en vez de latest ([f0edefe](https://github.com/joaquinipar/tp-devops-up/commit/f0edefe2f52a50dd51aa7a123ec7ae87a2368e87))
+* fix typo ([81da063](https://github.com/joaquinipar/tp-devops-up/commit/81da0633219790e33a08a76ebb2d5b3e38264cc7))
+* fix typo ([c122a88](https://github.com/joaquinipar/tp-devops-up/commit/c122a889136255b97ff9d640ef6125220a16f72e))
+* Merge pull request [#13](https://github.com/joaquinipar/tp-devops-up/issues/13) from joaquinipar/fix/typo ([81da063](https://github.com/joaquinipar/tp-devops-up/commit/81da0633219790e33a08a76ebb2d5b3e38264cc7))
+
 ## [1.1.1](https://github.com/joaquinipar/tp-devops-up/compare/v1.1.0...v1.1.1) (2026-05-29)
 
 
