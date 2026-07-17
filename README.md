@@ -80,8 +80,8 @@ build-and-test → docker-publish → render-deploy
 ```
 
 1. Compila el proyecto y ejecuta los tests unitarios
-2. Construye la imagen Docker y la publica en Docker Hub
-3. Dispara el redeploy automático en Render
+2. Construye la imagen Docker, la tagea con `sha-<commit>` y `latest`, y la publica en Docker Hub
+3. Llama a la API de Render (`POST /v1/services/{id}/deploys`) indicando explícitamente el `imageUrl` con el tag versionado (`sha-<commit>`), para que el deploy quede atado a una versión concreta de la imagen y no a `latest`
 
 ## Estructura del proyecto
 
