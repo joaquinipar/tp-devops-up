@@ -53,7 +53,7 @@ Las credenciales de Docker Hub se manejan como GitHub Secrets y nunca aparecen e
 
 ### Deploy en Render
 
-El tercer job del pipeline, `render-deploy`, se ejecuta después de publicar la imagen en Docker Hub y hace un POST al deploy hook de Render. Esto desencadena automáticamente un nuevo deploy del servicio con la imagen más reciente. El flujo completo desde un `git push` hasta el nuevo deploy en producción es completamente automático y no requiere intervención manual.
+El tercer job del pipeline, `render-deploy`, se ejecuta después de publicar la imagen en Docker Hub. En una primera versión este job simplemente golpeaba el deploy hook de Render, lo que disparaba un redeploy del servicio usando siempre el tag `latest` de la imagen, sin ninguna trazabilidad de qué versión concreta terminaba corriendo en producción. Para resolver esto, el job ahora llama directamente a la API de Render (`POST /v1/services/{serviceId}/deploys`) autenticado con una API Key, indicando explícitamente en el body el `imageUrl` con el mismo tag versionado (`sha-<commit>`) que se acaba de publicar en el job anterior. De esta forma el deploy queda atado a una imagen específica y verificable, y no a un puntero mutable como `latest`. El flujo completo desde un `git push` hasta el nuevo deploy en producción sigue siendo completamente automático y no requiere intervención manual.
 
 La base de datos de producción corre en el servicio de PostgreSQL de Render. Un detalle que surgió durante la integración fue que la URL que Render proporciona no incluye el número de puerto, que el driver JDBC de PostgreSQL requiere obligatoriamente. La solución fue separar las credenciales de la URL y agregar el puerto 5432 explícitamente en las variables de entorno del servicio.
 
